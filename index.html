@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск попутчиков для путешествий</title>
+
+    <link
+      rel="preload"
+      href="../fonts/BloggerSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../fonts/BloggerSans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../fonts/BloggerSans-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="prefetch"
+      href="/img/like-btn.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/range-slider.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="body-container">
+      <h1 hidden>Поиск попутчиков для путешествий</h1>
+      <section class="filter">
+        <div class="filter__container section-container">
+          <h2 class="filter__title">Подберите идеального попутчика</h2>
+          <form class="filter__form">
+            <div class="dropdown">
+              <button
+                type="button"
+                class="dropdown__title btn-reset"
+                onclick="dropdownFunction('one')"
+              >
+                <span>хобби:</span
+                ><svg
+                  id="arrow-one"
+                  width="10"
+                  height="5"
+                  viewBox="0 0 10 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.03858 5L0.711726 0.5L9.36542 0.5L5.03858 5Z"
+                    fill="#192144"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown__list-one" class="dropdown__list display-none">
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Спортзал" /><span
+                      >Спортзал</span
+                    ></label
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Кальян" /><span
+                      >Кальян</span
+                    ></label
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Диван" /><span
+                      >Диван</span
+                    ></label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <button
+                type="button"
+                class="dropdown__title btn-reset"
+                onclick="dropdownFunction('two')"
+              >
+                <span>музыка:</span
+                ><svg
+                  id="arrow-two"
+                  width="10"
+                  height="5"
+                  viewBox="0 0 10 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.03858 5L0.711726 0.5L9.36542 0.5L5.03858 5Z"
+                    fill="#192144"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown__list-two" class="dropdown__list display-none">
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Тяжелый рок" /><span
+                      >Тяжелый рок</span
+                    ></label
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Русский рэп" /><span
+                      >Русский рэп</span
+                    ></label
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Евроденс" /><span
+                      >Евроденс</span
+                    ></label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <button
+                type="button"
+                class="dropdown__title btn-reset"
+                onclick="dropdownFunction('three')"
+              >
+                <span>еда:</span
+                ><svg
+                  id="arrow-three"
+                  width="10"
+                  height="5"
+                  viewBox="0 0 10 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.03858 5L0.711726 0.5L9.36542 0.5L5.03858 5Z"
+                    fill="#192144"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown__list-three" class="dropdown__list display-none">
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Мясоед" /><span
+                      >Мясоед</span
+                    ></label
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Сидит на ПП" /><span
+                      >Сидит на ПП</span
+                    ></label
+                  >
+                </li>
+                <li class="dropdown__item">
+                  <label>
+                    <input type="checkbox" aria-label="Веган-сыроед" /><span
+                      >Веган-сыроед</span
+                    ></label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <button
+                type="button"
+                class="dropdown__title btn-reset"
+                onclick="dropdownFunction('four')"
+              >
+                <span>транспорт:</span
+                ><svg
+                  id="arrow-four"
+                  width="10"
+                  height="5"
+                  viewBox="0 0 10 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.03858 5L0.711726 0.5L9.36542 0.5L5.03858 5Z"
+                    fill="#192144"
+                  />
+                </svg>
+              </button>
+              <ul
+                id="dropdown__list-four"
+                class="dropdown__list transport-drop display-none"
+              >
+                <li class="dropdown__item">
+                  <label class="transport-label">
+                    <input type="checkbox" aria-label="Самолет"
+                  /></label>
+                </li>
+                <li class="dropdown__item">
+                  <label class="transport-label">
+                    <input type="checkbox" aria-label="Автобус"
+                  /></label>
+                </li>
+                <li class="dropdown__item">
+                  <label class="transport-label">
+                    <input type="checkbox" aria-label="Велосипед"
+                  /></label>
+                </li>
+                <li class="dropdown__item">
+                  <label class="transport-label">
+                    <input type="checkbox" aria-label="Пешком"
+                  /></label>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown dropdown-five">
+              <button
+                type="button"
+                class="dropdown__title btn-reset"
+                onclick="dropdownFunction('five')"
+              >
+                <span>левел:</span
+                ><svg
+                  id="arrow-five"
+                  width="10"
+                  height="5"
+                  viewBox="0 0 10 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.03858 5L0.711726 0.5L9.36542 0.5L5.03858 5Z"
+                    fill="#192144"
+                  />
+                </svg>
+              </button>
+              <div
+                id="dropdown__list-five"
+                class="dropdown__list level-drop display-none"
+              >
+                <div class="wrapper">
+                  <div class="price-input">
+                    <div class="field">
+                      <input type="number" class="input-min" value="25" />
+                    </div>
+                    <div class="field">
+                      <input type="number" class="input-max" value="100" />
+                    </div>
+                  </div>
+                  <div class="slider">
+                    <div class="progress"></div>
+                  </div>
+                  <div class="range-input">
+                    <input
+                      type="range"
+                      class="range-min"
+                      min="0"
+                      max="100"
+                      value="25"
+                      step="1"
+                    />
+                    <input
+                      type="range"
+                      class="range-max"
+                      min="0"
+                      max="100"
+                      value="100"
+                      step="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="submit btn-reset" type="submit">показать</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="users">
+        <div class="users__container section-container">
+          <ul class="users__list">
+            <li class="users__item">
+              <div class="img-container">
+                <img
+                  class="users__img"
+                  src="./img/user-4.jpg"
+                  alt="Таня Фирсова"
+                />
+              </div>
+              <div class="users__right">
+                <h3 class="users__name">
+                  <span class="dots">•</span
+                  ><span class="name">Таня Фирсова</span>
+                  <span class="dots dot-right">•</span>
+                </h3>
+                <p class="users__descr">
+                  #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
+                </p>
+                <div class="users__btn-container">
+                  <button class="btn-reset users__btn">Позвать!</button>
+                  <label class="label-like">
+                    <input type="checkbox" aria-label="Лайкнуть!" />
+                    <span>1,5 м</span>
+                  </label>
+                </div>
+                <ul class="place-list">
+                  <li class="place-item">
+                    <img
+                      src="./img/SriLanka.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />шри-ланка
+                  </li>
+                  <li class="place-item">
+                    <img
+                      src="./img/Thailand.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />Таиланд
+                  </li>
+                  <li class="place-item">
+                    <img
+                      src="./img/Seychelles.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />сейшелы
+                  </li>
+                </ul>
+                <div class="transport-level-container">
+                  <ul class="transport-list">
+                    <li class="transport-item">
+                      <img src="./img/icon_plane-checked.svg" alt="самолет" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bus.svg" alt="автобус" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bicycle.svg" alt="велосипед" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_run.svg" alt="пешком" />
+                    </li>
+                  </ul>
+                  <div class="level">
+                    <svg
+                      class="progress-ring"
+                      viewBox="0 0 64 64"
+                      width="64"
+                      height="64"
+                    >
+                      <circle
+                        id="progress-ring__circle-one"
+                        class="progress-ring__circle"
+                        stroke="#FF8D30"
+                        stroke-width="3"
+                        fill="transparent"
+                        stroke-linecap="round"
+                        r="30"
+                        cx="32"
+                        cy="32"
+                      />
+                      <line
+                        opacity="0.1"
+                        x1="15.349"
+                        y1="38.5"
+                        x2="49.3233"
+                        y2="38.5"
+                        stroke="black"
+                      />
+                      <path
+                        class="shadow"
+                        opacity="0.4"
+                        d="M20.3821 50.684V42.396C20.3821 42.2467 20.4334 42.1207 20.5361 42.018C20.6481 41.906 20.7787 41.85 20.9281 41.85C21.0867 41.85 21.2174 41.906 21.3201 42.018C21.4227 42.1207 21.4741 42.2467 21.4741 42.396V50.684C21.4741 50.992 21.5394 51.2113 21.6701 51.342C21.7354 51.426 21.7681 51.5147 21.7681 51.608C21.7681 51.748 21.7167 51.8693 21.6141 51.972C21.5207 52.0653 21.4041 52.112 21.2641 52.112C20.6761 52.112 20.3821 51.636 20.3821 50.684ZM25.7796 51.146C26.1809 51.146 26.6663 51.0153 27.2356 50.754C27.2916 50.726 27.3569 50.712 27.4316 50.712C27.5716 50.712 27.6883 50.7633 27.7816 50.866C27.8749 50.9593 27.9216 51.0713 27.9216 51.202C27.9216 51.51 27.6696 51.7387 27.1656 51.888C26.6616 52.0373 26.1576 52.112 25.6536 52.112C24.8789 52.112 24.2676 51.8973 23.8196 51.468C23.3809 51.0293 23.1616 50.4693 23.1616 49.788V47.17C23.1616 46.47 23.3856 45.9007 23.8336 45.462C24.2816 45.0233 24.9116 44.804 25.7236 44.804C26.4796 44.804 27.0536 45.0093 27.4456 45.42C27.8469 45.8213 28.0476 46.3767 28.0476 47.086C28.0476 48.4673 27.2589 49.158 25.6816 49.158C25.2243 49.158 24.7483 49.116 24.2536 49.032V49.858C24.2536 50.2593 24.3843 50.5767 24.6456 50.81C24.9069 51.034 25.2849 51.146 25.7796 51.146ZM26.9696 47.086C26.9696 46.2273 26.5449 45.798 25.6956 45.798C25.2476 45.798 24.8929 45.9147 24.6316 46.148C24.3796 46.372 24.2536 46.68 24.2536 47.072V48.136C24.7389 48.2013 25.2289 48.234 25.7236 48.234C26.2089 48.234 26.5356 48.1313 26.7036 47.926C26.8809 47.7113 26.9696 47.4313 26.9696 47.086ZM34.2716 45.532L32.3676 51.454C32.2183 51.8927 31.9803 52.112 31.6536 52.112C31.4669 52.112 31.3176 52.0653 31.2056 51.972C31.1029 51.8693 31.0143 51.7013 30.9396 51.468L28.9936 45.49C28.9376 45.3313 28.9703 45.1867 29.0916 45.056C29.2129 44.916 29.3576 44.846 29.5256 44.846C29.7683 44.846 29.9316 44.9673 30.0156 45.21L31.6536 50.488L33.2636 45.21C33.3476 44.9673 33.5109 44.846 33.7536 44.846C33.9216 44.846 34.0616 44.916 34.1736 45.056C34.2856 45.196 34.3183 45.3547 34.2716 45.532ZM37.8245 51.146C38.2259 51.146 38.7112 51.0153 39.2805 50.754C39.3365 50.726 39.4019 50.712 39.4765 50.712C39.6165 50.712 39.7332 50.7633 39.8265 50.866C39.9199 50.9593 39.9665 51.0713 39.9665 51.202C39.9665 51.51 39.7145 51.7387 39.2105 51.888C38.7065 52.0373 38.2025 52.112 37.6985 52.112C36.9239 52.112 36.3125 51.8973 35.8645 51.468C35.4259 51.0293 35.2065 50.4693 35.2065 49.788V47.17C35.2065 46.47 35.4305 45.9007 35.8785 45.462C36.3265 45.0233 36.9565 44.804 37.7685 44.804C38.5245 44.804 39.0985 45.0093 39.4905 45.42C39.8919 45.8213 40.0925 46.3767 40.0925 47.086C40.0925 48.4673 39.3039 49.158 37.7265 49.158C37.2692 49.158 36.7932 49.116 36.2985 49.032V49.858C36.2985 50.2593 36.4292 50.5767 36.6905 50.81C36.9519 51.034 37.3299 51.146 37.8245 51.146ZM39.0145 47.086C39.0145 46.2273 38.5899 45.798 37.7405 45.798C37.2925 45.798 36.9379 45.9147 36.6765 46.148C36.4245 46.372 36.2985 46.68 36.2985 47.072V48.136C36.7839 48.2013 37.2739 48.234 37.7685 48.234C38.2539 48.234 38.5805 48.1313 38.7485 47.926C38.9259 47.7113 39.0145 47.4313 39.0145 47.086ZM41.5051 50.684V42.396C41.5051 42.2467 41.5564 42.1207 41.6591 42.018C41.7711 41.906 41.9018 41.85 42.0511 41.85C42.2098 41.85 42.3404 41.906 42.4431 42.018C42.5458 42.1207 42.5971 42.2467 42.5971 42.396V50.684C42.5971 50.992 42.6624 51.2113 42.7931 51.342C42.8584 51.426 42.8911 51.5147 42.8911 51.608C42.8911 51.748 42.8398 51.8693 42.7371 51.972C42.6438 52.0653 42.5271 52.112 42.3871 52.112C41.7991 52.112 41.5051 51.636 41.5051 50.684Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <input
+                      id="progress-ring__input-one"
+                      class="level__input"
+                      value="99"
+                      type="number"
+                      step="5"
+                      min="0"
+                      max="100"
+                      placeholder="progress"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="users__item">
+              <div class="img-container">
+                <img
+                  class="users__img"
+                  src="./img/user-3.jpg"
+                  alt="Петя Демин"
+                />
+              </div>
+              <div class="users__right">
+                <h3 class="users__name">
+                  <span class="dots">•</span
+                  ><span class="name">Петя Демин</span>
+                  <span class="dots dot-right">•</span>
+                </h3>
+                <p class="users__descr">#бургер #бар #футбол #концерт #крафт</p>
+                <div class="users__btn-container">
+                  <button class="btn-reset users__btn">Позвать!</button>
+                  <label class="label-like">
+                    <input type="checkbox" aria-label="Лайкнуть!" />
+                    <span>1500</span>
+                  </label>
+                </div>
+                <ul class="place-list">
+                  <li class="place-item">
+                    <img
+                      src="./img/Belgium.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />бельгия
+                  </li>
+                  <li class="place-item">
+                    <img src="./img/Czech.svg" alt="" aria-hidden="true" />чехия
+                  </li>
+                </ul>
+                <div class="transport-level-container">
+                  <ul class="transport-list">
+                    <li class="transport-item">
+                      <img src="./img/icon_plane-checked.svg" alt="самолет" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bus-checked.svg" alt="автобус" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bicycle.svg" alt="велосипед" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_run-checked.svg" alt="пешком" />
+                    </li>
+                  </ul>
+                  <div class="level">
+                    <svg
+                      class="progress-ring"
+                      viewBox="0 0 64 64"
+                      width="64"
+                      height="64"
+                    >
+                      <circle
+                        id="progress-ring__circle-two"
+                        class="progress-ring__circle"
+                        stroke="#FF8D30"
+                        stroke-width="3"
+                        fill="transparent"
+                        stroke-linecap="round"
+                        r="30"
+                        cx="32"
+                        cy="32"
+                      />
+                      <line
+                        opacity="0.1"
+                        x1="15.349"
+                        y1="38.5"
+                        x2="49.3233"
+                        y2="38.5"
+                        stroke="black"
+                      />
+                      <path
+                        class="shadow"
+                        opacity="0.4"
+                        d="M20.3821 50.684V42.396C20.3821 42.2467 20.4334 42.1207 20.5361 42.018C20.6481 41.906 20.7787 41.85 20.9281 41.85C21.0867 41.85 21.2174 41.906 21.3201 42.018C21.4227 42.1207 21.4741 42.2467 21.4741 42.396V50.684C21.4741 50.992 21.5394 51.2113 21.6701 51.342C21.7354 51.426 21.7681 51.5147 21.7681 51.608C21.7681 51.748 21.7167 51.8693 21.6141 51.972C21.5207 52.0653 21.4041 52.112 21.2641 52.112C20.6761 52.112 20.3821 51.636 20.3821 50.684ZM25.7796 51.146C26.1809 51.146 26.6663 51.0153 27.2356 50.754C27.2916 50.726 27.3569 50.712 27.4316 50.712C27.5716 50.712 27.6883 50.7633 27.7816 50.866C27.8749 50.9593 27.9216 51.0713 27.9216 51.202C27.9216 51.51 27.6696 51.7387 27.1656 51.888C26.6616 52.0373 26.1576 52.112 25.6536 52.112C24.8789 52.112 24.2676 51.8973 23.8196 51.468C23.3809 51.0293 23.1616 50.4693 23.1616 49.788V47.17C23.1616 46.47 23.3856 45.9007 23.8336 45.462C24.2816 45.0233 24.9116 44.804 25.7236 44.804C26.4796 44.804 27.0536 45.0093 27.4456 45.42C27.8469 45.8213 28.0476 46.3767 28.0476 47.086C28.0476 48.4673 27.2589 49.158 25.6816 49.158C25.2243 49.158 24.7483 49.116 24.2536 49.032V49.858C24.2536 50.2593 24.3843 50.5767 24.6456 50.81C24.9069 51.034 25.2849 51.146 25.7796 51.146ZM26.9696 47.086C26.9696 46.2273 26.5449 45.798 25.6956 45.798C25.2476 45.798 24.8929 45.9147 24.6316 46.148C24.3796 46.372 24.2536 46.68 24.2536 47.072V48.136C24.7389 48.2013 25.2289 48.234 25.7236 48.234C26.2089 48.234 26.5356 48.1313 26.7036 47.926C26.8809 47.7113 26.9696 47.4313 26.9696 47.086ZM34.2716 45.532L32.3676 51.454C32.2183 51.8927 31.9803 52.112 31.6536 52.112C31.4669 52.112 31.3176 52.0653 31.2056 51.972C31.1029 51.8693 31.0143 51.7013 30.9396 51.468L28.9936 45.49C28.9376 45.3313 28.9703 45.1867 29.0916 45.056C29.2129 44.916 29.3576 44.846 29.5256 44.846C29.7683 44.846 29.9316 44.9673 30.0156 45.21L31.6536 50.488L33.2636 45.21C33.3476 44.9673 33.5109 44.846 33.7536 44.846C33.9216 44.846 34.0616 44.916 34.1736 45.056C34.2856 45.196 34.3183 45.3547 34.2716 45.532ZM37.8245 51.146C38.2259 51.146 38.7112 51.0153 39.2805 50.754C39.3365 50.726 39.4019 50.712 39.4765 50.712C39.6165 50.712 39.7332 50.7633 39.8265 50.866C39.9199 50.9593 39.9665 51.0713 39.9665 51.202C39.9665 51.51 39.7145 51.7387 39.2105 51.888C38.7065 52.0373 38.2025 52.112 37.6985 52.112C36.9239 52.112 36.3125 51.8973 35.8645 51.468C35.4259 51.0293 35.2065 50.4693 35.2065 49.788V47.17C35.2065 46.47 35.4305 45.9007 35.8785 45.462C36.3265 45.0233 36.9565 44.804 37.7685 44.804C38.5245 44.804 39.0985 45.0093 39.4905 45.42C39.8919 45.8213 40.0925 46.3767 40.0925 47.086C40.0925 48.4673 39.3039 49.158 37.7265 49.158C37.2692 49.158 36.7932 49.116 36.2985 49.032V49.858C36.2985 50.2593 36.4292 50.5767 36.6905 50.81C36.9519 51.034 37.3299 51.146 37.8245 51.146ZM39.0145 47.086C39.0145 46.2273 38.5899 45.798 37.7405 45.798C37.2925 45.798 36.9379 45.9147 36.6765 46.148C36.4245 46.372 36.2985 46.68 36.2985 47.072V48.136C36.7839 48.2013 37.2739 48.234 37.7685 48.234C38.2539 48.234 38.5805 48.1313 38.7485 47.926C38.9259 47.7113 39.0145 47.4313 39.0145 47.086ZM41.5051 50.684V42.396C41.5051 42.2467 41.5564 42.1207 41.6591 42.018C41.7711 41.906 41.9018 41.85 42.0511 41.85C42.2098 41.85 42.3404 41.906 42.4431 42.018C42.5458 42.1207 42.5971 42.2467 42.5971 42.396V50.684C42.5971 50.992 42.6624 51.2113 42.7931 51.342C42.8584 51.426 42.8911 51.5147 42.8911 51.608C42.8911 51.748 42.8398 51.8693 42.7371 51.972C42.6438 52.0653 42.5271 52.112 42.3871 52.112C41.7991 52.112 41.5051 51.636 41.5051 50.684Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <input
+                      id="progress-ring__input-two"
+                      class="level__input"
+                      value="80"
+                      type="number"
+                      step="5"
+                      min="0"
+                      max="100"
+                      placeholder="progress"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="users__item">
+              <div class="img-container">
+                <img
+                  class="users__img"
+                  src="./img/user-2.jpg"
+                  alt="Марк Смолов"
+                />
+              </div>
+              <div class="users__right">
+                <h3 class="users__name">
+                  <span class="dots">•</span
+                  ><span class="name">Марк Смолов</span>
+                  <span class="dots dot-right">•</span>
+                </h3>
+                <p class="users__descr">
+                  #рэп #тату #хайпбист #кроссовки #суприм
+                </p>
+                <div class="users__btn-container">
+                  <button class="btn-reset users__btn">Позвать!</button>
+                  <label class="label-like">
+                    <input type="checkbox" aria-label="Лайкнуть!" />
+                    <span>170</span>
+                  </label>
+                </div>
+                <ul class="place-list">
+                  <li class="place-item">
+                    <img
+                      src="./img/United-States-of-America.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />сша
+                  </li>
+                  <li class="place-item">
+                    <img
+                      src="./img/Australia.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />австралия
+                  </li>
+                  <li class="place-item">
+                    <img
+                      src="./img/Dominica.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />доминика
+                  </li>
+                </ul>
+                <div class="transport-level-container">
+                  <ul class="transport-list">
+                    <li class="transport-item">
+                      <img src="./img/icon_plane-checked.svg" alt="самолет" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bus.svg" alt="автобус" />
+                    </li>
+                    <li class="transport-item">
+                      <img
+                        src="./img/icon_bicycle-checked.svg"
+                        alt="велосипед"
+                      />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_run.svg" alt="пешком" />
+                    </li>
+                  </ul>
+                  <div class="level">
+                    <svg
+                      class="progress-ring"
+                      viewBox="0 0 64 64"
+                      width="64"
+                      height="64"
+                    >
+                      <circle
+                        id="progress-ring__circle-three"
+                        class="progress-ring__circle"
+                        stroke="#FF8D30"
+                        stroke-width="3"
+                        fill="transparent"
+                        stroke-linecap="round"
+                        r="30"
+                        cx="32"
+                        cy="32"
+                      />
+                      <line
+                        opacity="0.1"
+                        x1="15.349"
+                        y1="38.5"
+                        x2="49.3233"
+                        y2="38.5"
+                        stroke="black"
+                      />
+                      <path
+                        class="shadow"
+                        opacity="0.4"
+                        d="M20.3821 50.684V42.396C20.3821 42.2467 20.4334 42.1207 20.5361 42.018C20.6481 41.906 20.7787 41.85 20.9281 41.85C21.0867 41.85 21.2174 41.906 21.3201 42.018C21.4227 42.1207 21.4741 42.2467 21.4741 42.396V50.684C21.4741 50.992 21.5394 51.2113 21.6701 51.342C21.7354 51.426 21.7681 51.5147 21.7681 51.608C21.7681 51.748 21.7167 51.8693 21.6141 51.972C21.5207 52.0653 21.4041 52.112 21.2641 52.112C20.6761 52.112 20.3821 51.636 20.3821 50.684ZM25.7796 51.146C26.1809 51.146 26.6663 51.0153 27.2356 50.754C27.2916 50.726 27.3569 50.712 27.4316 50.712C27.5716 50.712 27.6883 50.7633 27.7816 50.866C27.8749 50.9593 27.9216 51.0713 27.9216 51.202C27.9216 51.51 27.6696 51.7387 27.1656 51.888C26.6616 52.0373 26.1576 52.112 25.6536 52.112C24.8789 52.112 24.2676 51.8973 23.8196 51.468C23.3809 51.0293 23.1616 50.4693 23.1616 49.788V47.17C23.1616 46.47 23.3856 45.9007 23.8336 45.462C24.2816 45.0233 24.9116 44.804 25.7236 44.804C26.4796 44.804 27.0536 45.0093 27.4456 45.42C27.8469 45.8213 28.0476 46.3767 28.0476 47.086C28.0476 48.4673 27.2589 49.158 25.6816 49.158C25.2243 49.158 24.7483 49.116 24.2536 49.032V49.858C24.2536 50.2593 24.3843 50.5767 24.6456 50.81C24.9069 51.034 25.2849 51.146 25.7796 51.146ZM26.9696 47.086C26.9696 46.2273 26.5449 45.798 25.6956 45.798C25.2476 45.798 24.8929 45.9147 24.6316 46.148C24.3796 46.372 24.2536 46.68 24.2536 47.072V48.136C24.7389 48.2013 25.2289 48.234 25.7236 48.234C26.2089 48.234 26.5356 48.1313 26.7036 47.926C26.8809 47.7113 26.9696 47.4313 26.9696 47.086ZM34.2716 45.532L32.3676 51.454C32.2183 51.8927 31.9803 52.112 31.6536 52.112C31.4669 52.112 31.3176 52.0653 31.2056 51.972C31.1029 51.8693 31.0143 51.7013 30.9396 51.468L28.9936 45.49C28.9376 45.3313 28.9703 45.1867 29.0916 45.056C29.2129 44.916 29.3576 44.846 29.5256 44.846C29.7683 44.846 29.9316 44.9673 30.0156 45.21L31.6536 50.488L33.2636 45.21C33.3476 44.9673 33.5109 44.846 33.7536 44.846C33.9216 44.846 34.0616 44.916 34.1736 45.056C34.2856 45.196 34.3183 45.3547 34.2716 45.532ZM37.8245 51.146C38.2259 51.146 38.7112 51.0153 39.2805 50.754C39.3365 50.726 39.4019 50.712 39.4765 50.712C39.6165 50.712 39.7332 50.7633 39.8265 50.866C39.9199 50.9593 39.9665 51.0713 39.9665 51.202C39.9665 51.51 39.7145 51.7387 39.2105 51.888C38.7065 52.0373 38.2025 52.112 37.6985 52.112C36.9239 52.112 36.3125 51.8973 35.8645 51.468C35.4259 51.0293 35.2065 50.4693 35.2065 49.788V47.17C35.2065 46.47 35.4305 45.9007 35.8785 45.462C36.3265 45.0233 36.9565 44.804 37.7685 44.804C38.5245 44.804 39.0985 45.0093 39.4905 45.42C39.8919 45.8213 40.0925 46.3767 40.0925 47.086C40.0925 48.4673 39.3039 49.158 37.7265 49.158C37.2692 49.158 36.7932 49.116 36.2985 49.032V49.858C36.2985 50.2593 36.4292 50.5767 36.6905 50.81C36.9519 51.034 37.3299 51.146 37.8245 51.146ZM39.0145 47.086C39.0145 46.2273 38.5899 45.798 37.7405 45.798C37.2925 45.798 36.9379 45.9147 36.6765 46.148C36.4245 46.372 36.2985 46.68 36.2985 47.072V48.136C36.7839 48.2013 37.2739 48.234 37.7685 48.234C38.2539 48.234 38.5805 48.1313 38.7485 47.926C38.9259 47.7113 39.0145 47.4313 39.0145 47.086ZM41.5051 50.684V42.396C41.5051 42.2467 41.5564 42.1207 41.6591 42.018C41.7711 41.906 41.9018 41.85 42.0511 41.85C42.2098 41.85 42.3404 41.906 42.4431 42.018C42.5458 42.1207 42.5971 42.2467 42.5971 42.396V50.684C42.5971 50.992 42.6624 51.2113 42.7931 51.342C42.8584 51.426 42.8911 51.5147 42.8911 51.608C42.8911 51.748 42.8398 51.8693 42.7371 51.972C42.6438 52.0653 42.5271 52.112 42.3871 52.112C41.7991 52.112 41.5051 51.636 41.5051 50.684Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <input
+                      id="progress-ring__input-three"
+                      class="level__input"
+                      value="25"
+                      type="number"
+                      step="5"
+                      min="0"
+                      max="100"
+                      placeholder="progress"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="users__item">
+              <div class="img-container">
+                <img
+                  class="users__img"
+                  src="./img/user-1.jpg"
+                  alt="Лариса Роговая"
+                />
+              </div>
+              <div class="users__right">
+                <h3 class="users__name">
+                  <span class="dots">•</span
+                  ><span class="name">Лариса Роговая</span>
+                  <span class="dots dot-right">•</span>
+                </h3>
+                <p class="users__descr">
+                  #образование #карьера #учеба #линкедин
+                </p>
+                <div class="users__btn-container">
+                  <button class="btn-reset users__btn">Позвать!</button>
+                  <label class="label-like">
+                    <input type="checkbox" aria-label="Лайкнуть!" />
+                    <span>23</span>
+                  </label>
+                </div>
+                <ul class="place-list">
+                  <li class="place-item">
+                    <img
+                      src="./img/United-Kingdom.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />Великобритания
+                  </li>
+                  <li class="place-item">
+                    <img
+                      src="./img/Germany.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />Германия
+                  </li>
+                </ul>
+                <div class="transport-level-container">
+                  <ul class="transport-list">
+                    <li class="transport-item">
+                      <img src="./img/icon_plane-checked.svg" alt="самолет" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bus-checked.svg" alt="автобус" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_bicycle.svg" alt="велосипед" />
+                    </li>
+                    <li class="transport-item">
+                      <img src="./img/icon_run.svg" alt="пешком" />
+                    </li>
+                  </ul>
+                  <div class="level">
+                    <svg
+                      class="progress-ring"
+                      viewBox="0 0 64 64"
+                      width="64"
+                      height="64"
+                    >
+                      <circle
+                        id="progress-ring__circle-four"
+                        class="progress-ring__circle"
+                        stroke="#FF8D30"
+                        stroke-width="3"
+                        fill="transparent"
+                        stroke-linecap="round"
+                        r="30"
+                        cx="32"
+                        cy="32"
+                      />
+                      <line
+                        opacity="0.1"
+                        x1="15.349"
+                        y1="38.5"
+                        x2="49.3233"
+                        y2="38.5"
+                        stroke="black"
+                      />
+                      <path
+                        class="shadow"
+                        opacity="0.4"
+                        d="M20.3821 50.684V42.396C20.3821 42.2467 20.4334 42.1207 20.5361 42.018C20.6481 41.906 20.7787 41.85 20.9281 41.85C21.0867 41.85 21.2174 41.906 21.3201 42.018C21.4227 42.1207 21.4741 42.2467 21.4741 42.396V50.684C21.4741 50.992 21.5394 51.2113 21.6701 51.342C21.7354 51.426 21.7681 51.5147 21.7681 51.608C21.7681 51.748 21.7167 51.8693 21.6141 51.972C21.5207 52.0653 21.4041 52.112 21.2641 52.112C20.6761 52.112 20.3821 51.636 20.3821 50.684ZM25.7796 51.146C26.1809 51.146 26.6663 51.0153 27.2356 50.754C27.2916 50.726 27.3569 50.712 27.4316 50.712C27.5716 50.712 27.6883 50.7633 27.7816 50.866C27.8749 50.9593 27.9216 51.0713 27.9216 51.202C27.9216 51.51 27.6696 51.7387 27.1656 51.888C26.6616 52.0373 26.1576 52.112 25.6536 52.112C24.8789 52.112 24.2676 51.8973 23.8196 51.468C23.3809 51.0293 23.1616 50.4693 23.1616 49.788V47.17C23.1616 46.47 23.3856 45.9007 23.8336 45.462C24.2816 45.0233 24.9116 44.804 25.7236 44.804C26.4796 44.804 27.0536 45.0093 27.4456 45.42C27.8469 45.8213 28.0476 46.3767 28.0476 47.086C28.0476 48.4673 27.2589 49.158 25.6816 49.158C25.2243 49.158 24.7483 49.116 24.2536 49.032V49.858C24.2536 50.2593 24.3843 50.5767 24.6456 50.81C24.9069 51.034 25.2849 51.146 25.7796 51.146ZM26.9696 47.086C26.9696 46.2273 26.5449 45.798 25.6956 45.798C25.2476 45.798 24.8929 45.9147 24.6316 46.148C24.3796 46.372 24.2536 46.68 24.2536 47.072V48.136C24.7389 48.2013 25.2289 48.234 25.7236 48.234C26.2089 48.234 26.5356 48.1313 26.7036 47.926C26.8809 47.7113 26.9696 47.4313 26.9696 47.086ZM34.2716 45.532L32.3676 51.454C32.2183 51.8927 31.9803 52.112 31.6536 52.112C31.4669 52.112 31.3176 52.0653 31.2056 51.972C31.1029 51.8693 31.0143 51.7013 30.9396 51.468L28.9936 45.49C28.9376 45.3313 28.9703 45.1867 29.0916 45.056C29.2129 44.916 29.3576 44.846 29.5256 44.846C29.7683 44.846 29.9316 44.9673 30.0156 45.21L31.6536 50.488L33.2636 45.21C33.3476 44.9673 33.5109 44.846 33.7536 44.846C33.9216 44.846 34.0616 44.916 34.1736 45.056C34.2856 45.196 34.3183 45.3547 34.2716 45.532ZM37.8245 51.146C38.2259 51.146 38.7112 51.0153 39.2805 50.754C39.3365 50.726 39.4019 50.712 39.4765 50.712C39.6165 50.712 39.7332 50.7633 39.8265 50.866C39.9199 50.9593 39.9665 51.0713 39.9665 51.202C39.9665 51.51 39.7145 51.7387 39.2105 51.888C38.7065 52.0373 38.2025 52.112 37.6985 52.112C36.9239 52.112 36.3125 51.8973 35.8645 51.468C35.4259 51.0293 35.2065 50.4693 35.2065 49.788V47.17C35.2065 46.47 35.4305 45.9007 35.8785 45.462C36.3265 45.0233 36.9565 44.804 37.7685 44.804C38.5245 44.804 39.0985 45.0093 39.4905 45.42C39.8919 45.8213 40.0925 46.3767 40.0925 47.086C40.0925 48.4673 39.3039 49.158 37.7265 49.158C37.2692 49.158 36.7932 49.116 36.2985 49.032V49.858C36.2985 50.2593 36.4292 50.5767 36.6905 50.81C36.9519 51.034 37.3299 51.146 37.8245 51.146ZM39.0145 47.086C39.0145 46.2273 38.5899 45.798 37.7405 45.798C37.2925 45.798 36.9379 45.9147 36.6765 46.148C36.4245 46.372 36.2985 46.68 36.2985 47.072V48.136C36.7839 48.2013 37.2739 48.234 37.7685 48.234C38.2539 48.234 38.5805 48.1313 38.7485 47.926C38.9259 47.7113 39.0145 47.4313 39.0145 47.086ZM41.5051 50.684V42.396C41.5051 42.2467 41.5564 42.1207 41.6591 42.018C41.7711 41.906 41.9018 41.85 42.0511 41.85C42.2098 41.85 42.3404 41.906 42.4431 42.018C42.5458 42.1207 42.5971 42.2467 42.5971 42.396V50.684C42.5971 50.992 42.6624 51.2113 42.7931 51.342C42.8584 51.426 42.8911 51.5147 42.8911 51.608C42.8911 51.748 42.8398 51.8693 42.7371 51.972C42.6438 52.0653 42.5271 52.112 42.3871 52.112C41.7991 52.112 41.5051 51.636 41.5051 50.684Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <input
+                      id="progress-ring__input-four"
+                      class="level__input"
+                      value="50"
+                      type="number"
+                      step="5"
+                      min="0"
+                      max="100"
+                      placeholder="progress"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <button class="show-more btn-reset">
+            <span
+              ><svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.737305"
+                  y="12"
+                  width="25.9803"
+                  height="2"
+                  rx="1"
+                  fill="#1D2E5B"
+                />
+                <rect
+                  x="12.7283"
+                  y="26"
+                  width="26"
+                  height="1.99849"
+                  rx="0.999243"
+                  transform="rotate(-90 12.7283 26)"
+                  fill="#1D2E5B"
+                />
+              </svg> </span
+            >показать еще
+          </button>
+
+          <div class="pagination-container">
+            <ul class="pages">
+              <li class="page">
+                <label>
+                  <input name="page" type="radio" class="btn-reset btn-page" />
+                </label>
+              </li>
+              <li class="page">
+                <label>
+                  <input name="page" type="radio" class="btn-reset btn-page" />
+                </label>
+              </li>
+              <li class="page">
+                <label>
+                  <input name="page" type="radio" class="btn-reset btn-page" />
+                </label>
+              </li>
+              <li class="page">
+                <label>
+                  <input name="page" type="radio" class="btn-reset btn-page" />
+                </label>
+              </li>
+            </ul>
+            <div class="switching-container">
+              <button class="btn-reset">
+                <svg
+                  width="14"
+                  height="20"
+                  viewBox="0 0 14 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.252197 10L10.0022 1.33974L10.0022 18.6603L0.252197 10Z"
+                    fill="#1D2E5B"
+                  />
+                </svg>
+              </button>
+              <button class="btn-reset">
+                <svg
+                  width="14"
+                  height="20"
+                  viewBox="0 0 14 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.2687 10L3.51868 18.6603L3.51868 1.33975L13.2687 10Z"
+                    fill="#1D2E5B"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
